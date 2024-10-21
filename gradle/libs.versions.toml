@@ -1,25 +1,24 @@
 [versions]
-activityCompose = "1.9.2"
-activityComposeVersion = "1.7.2"
+activityCompose = "1.9.3"
+activityComposeVersion = "1.9.3"
 agp = "8.5.2"
 androidxMaterial = "<version>"
-androidxMaterialVersion = "1.5.3"
-androidxMedia3CommonKtx = "1.4.0"
+androidxMaterialVersion = "1.7.4"
 coilCompose = "2.7.0"
 compose = "1.0.0-alpha.3"
-firebaseBom = "33.3.0"
-firebaseBomVersion = "32.0.0"
+firebaseBom = "33.4.0"
+firebaseBomVersion = "33.4.0"
 firebaseDynamicModuleSupport = "16.0.0-beta03"
-firebaseFirestoreKtx = "24.6.0"
+firebaseFirestoreKtx = "25.1.0"
 firebaseMessaging = "24.0.2"
 glideVersion = "4.15.1"
-googleFirebaseBom = "32.2.0"
-googleFirebaseFirestoreKtx = "24.0.0"
+googleFirebaseBom = "33.4.0"
+googleFirebaseFirestoreKtx = "25.1.0"
 googleServices = "4.4.2"
-googleServicesVersion = "4.3.15"
+googleServicesVersion = "4.4.2"
 gradle = "8.1.4"
 gradleVersion = "8.5.2"
-kotlin = "1.9.10"
+kotlin = "1.9.20"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -27,25 +26,25 @@ espressoCore = "3.6.1"
 appcompat = "1.7.0"
 landscapistGlide = "1.6.1"
 material = "1.12.0"
-activity = "1.9.2"
+activity = "1.9.3"
 constraintlayout = "2.1.4"
 googleGmsGoogleServices = "4.4.2"
 firebaseFirestore = "25.1.0"
 firebaseAuthKtx = "23.0.0"
 firebaseAuth = "23.0.0"
-firebaseStorage = "21.0.0"
-materialVersion = "1.7.3"
+firebaseStorage = "21.0.1"
+materialVersion = "1.7.4"
 media3CommonKtxVersion = "1.3.0"
-navigationCompose = "2.8.2"
-ui = "1.7.3"
-uiTestJunit4 = "1.7.3"
-uiTestManifest = "1.7.3"
-uiTestManifestVersion = "1.5.3"
-uiTooling = "1.7.3"
-uiToolingPreview = "1.7.3"
-uiToolingPreviewVersion = "1.5.3"
-uiToolingVersion = "1.5.3"
-uiVersion = "1.5.3"
+navigationCompose = "2.8.3"
+ui = "1.7.4"
+uiTestJunit4 = "1.7.4"
+uiTestManifest = "1.7.4"
+uiTestManifestVersion = "1.7.4"
+uiTooling = "1.7.4"
+uiToolingPreview = "1.7.4"
+uiToolingPreviewVersion = "1.7.4"
+uiToolingVersion = "1.7.4"
+uiVersion = "1.7.4"
 viewpager2 = "1.1.0"
 media3CommonKtx = "1.4.1"
 firebaseMessagingKtx = "24.0.2"
@@ -55,41 +54,61 @@ firebaseInappmessaging = "21.0.0"
 firebaseStorageKtx = "21.0.1"
 
 [libraries]
+#noinspection SimilarGradleDependency
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activityCompose" }
+#noinspection SimilarGradleDependency
 androidx-activity-compose-v172 = { module = "androidx.activity:activity-compose", version.ref = "activityComposeVersion" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+#noinspection SimilarGradleDependency
 androidx-material = { module = "androidx.compose.material:material", version.ref = "materialVersion" }
 androidx-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "materialVersion" }
+#noinspection SimilarGradleDependency
 androidx-material-v153 = { module = "androidx.compose.material:material", version.ref = "androidxMaterialVersion" }
+#noinspection SimilarGradleDependency
 androidx-material-vversion = { module = "androidx.compose.material:material", version.ref = "androidxMaterial" }
-androidx-media3-common = { module = "androidx.media3:media3-common", version.ref = "androidxMedia3CommonKtx" }
+#noinspection SimilarGradleDependency
 androidx-media3-common-ktx-v130 = { module = "androidx.media3:media3-common-ktx", version.ref = "media3CommonKtxVersion" }
-androidx-media3-common-ktx-v140 = { module = "androidx.media3:media3-common-ktx", version.ref = "androidxMedia3CommonKtx" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
+#noinspection SimilarGradleDependency
 androidx-ui = { module = "androidx.compose.ui:ui", version.ref = "ui" }
 androidx-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "uiTestJunit4" }
+#noinspection SimilarGradleDependency
 androidx-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "uiTestManifest" }
+#noinspection SimilarGradleDependency
 androidx-ui-test-manifest-v153 = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "uiTestManifestVersion" }
+#noinspection SimilarGradleDependency
 androidx-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "uiTooling" }
+#noinspection SimilarGradleDependency
 androidx-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "uiToolingPreview" }
+#noinspection SimilarGradleDependency
 androidx-ui-tooling-preview-v153 = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "uiToolingPreviewVersion" }
+#noinspection SimilarGradleDependency
 androidx-ui-tooling-v153 = { module = "androidx.compose.ui:ui-tooling", version.ref = "uiToolingVersion" }
+#noinspection SimilarGradleDependency
 androidx-ui-v153 = { module = "androidx.compose.ui:ui", version.ref = "uiVersion" }
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
 compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glideVersion" }
 compose = { module = "com.github.bumptech.glide:compose", version.ref = "compose" }
 firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx" }
+#noinspection SimilarGradleDependency
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
+#noinspection SimilarGradleDependency
 firebase-bom-v3200 = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBomVersion" }
+#noinspection SimilarGradleDependency
 firebase-bom-v3220 = { module = "com.google.firebase:firebase-bom", version.ref = "googleFirebaseBom" }
 firebase-dynamic-module-support = { module = "com.google.firebase:firebase-dynamic-module-support", version.ref = "firebaseDynamicModuleSupport" }
+#noinspection SimilarGradleDependency
 firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx", version.ref = "firebaseFirestore" }
+#noinspection SimilarGradleDependency
 firebase-firestore-ktx-v2460 = { module = "com.google.firebase:firebase-firestore-ktx", version.ref = "firebaseFirestoreKtx" }
 firebase-messaging = { module = "com.google.firebase:firebase-messaging", version.ref = "firebaseMessaging" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glideVersion" }
 google-firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx" }
+#noinspection SimilarGradleDependency
 google-firebase-firestore-ktx-v2400 = { module = "com.google.firebase:firebase-firestore-ktx", version.ref = "googleFirebaseFirestoreKtx" }
+#noinspection SimilarGradleDependency
 google-services = { module = "com.google.gms:google-services", version.ref = "googleServices" }
+#noinspection SimilarGradleDependency
 google-services-v4315 = { module = "com.google.gms:google-services", version.ref = "googleServicesVersion" }
 #noinspection SimilarGradleDependency
 gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
