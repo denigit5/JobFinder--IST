@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:backgroundTintMode="@color/dull_red"
+    android:padding="16dp"
+    tools:background="@color/white">
+
+    <!-- School Logo -->
+    <ImageView
+        android:id="@+id/school_logo_login"
+        android:layout_width="206dp"
+        android:layout_height="198dp"
+        android:layout_marginTop="35dp"
+        android:contentDescription="@string/school_logo_desc"
+        android:src="@drawable/ist_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Name Input -->
+    <EditText
+        android:id="@+id/input_name"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints="name"
+        android:background="@color/material_dynamic_neutral90"
+        android:hint="@string/full_name"
+        android:inputType="textPersonName"
+        android:paddingStart="10dp"
+        android:textColor="#000000"
+        android:textColorHint="#616161"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/school_logo_login"
+        tools:ignore="RtlSymmetry,VisualLintTextFieldSize" />
+
+    <!-- Email Input -->
+    <EditText
+        android:id="@+id/input_email"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints="emailAddress"
+        android:background="@color/material_dynamic_neutral90"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:paddingStart="10dp"
+        android:textColor="#000000"
+        android:textColorHint="#616161"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_name"
+        tools:ignore="RtlSymmetry,VisualLintTextFieldSize"
+        tools:layout_editor_absoluteX="41dp" />
+
+    <!-- Password Input -->
+    <EditText
+        android:id="@+id/input_password"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints="password"
+        android:background="@color/material_dynamic_neutral90"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:paddingStart="10dp"
+        android:textColor="#000000"
+        android:textColorHint="#616161"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_email"
+        tools:ignore="RtlSymmetry,VisualLintTextFieldSize"
+        tools:layout_editor_absoluteX="41dp" />
+
+    <!-- Confirm Password Input -->
+    <EditText
+        android:id="@+id/input_confirm_password"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints="confirm_password"
+        android:background="@color/material_dynamic_neutral90"
+        android:hint="@string/confirm_password"
+        android:inputType="textPassword"
+        android:paddingStart="5dp"
+        android:textColor="@color/black"
+        android:textColorHint="#616161"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_password"
+        tools:ignore="RtlSymmetry,VisualLintTextFieldSize"
+        tools:layout_editor_absoluteX="41dp" />
+
+    <!-- Signup Button -->
+
+    <!-- Already have an account? -->
+
+    <!-- Login TextView -->
+
+    <TextView
+        android:id="@+id/tv_signup_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/already_have_an_account"
+        android:textColor="#605D5D"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_confirm_password" />
+
+    <TextView
+        android:id="@+id/login_here"
+        android:layout_width="265dp"
+        android:layout_height="223dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="-96dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/login_here"
+        android:textColor="#BA7BCC"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_confirm_password"
+        tools:ignore="MissingConstraints,VisualLintBounds"
+        tools:layout_constraintLeft_toLeftOf="@id/tv_signup_link" />
+
+    <Button
+        android:id="@+id/btn_signup"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:backgroundTint="@color/dull_red"
+        android:editable="true"
+        android:text="@string/signup"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_confirm_password"
+        tools:ignore="Deprecated,TextViewEdits,VisualLintOverlap,TextContrastCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Custom menu item style -->
+    <style name="CustomNavigationMenuItem" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:textColor">#333333</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Custom NavigationView style -->
+    <style name="CustomNavigationView" parent="Widget.Design.NavigationView">
+        <item name="android:background">#FFFFFF</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <style name="Theme.JobFinderIst" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@android:color/black</item>
+        <!-- Background color -->
+        <item name="android:colorBackground">@android:color/white</item>
+    </style>
+
+    <style name="RoundedImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+</resources>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/job_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:clipToOutline="false"
+        android:elevation="0dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="s">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FAF7F7"
+            android:clickable="true"
+            android:elevation="0dp"
+            android:focusable="true"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Job Title -->
+            <TextView
+                android:id="@+id/job_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/software_engineer"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Company Name -->
+            <TextView
+                android:id="@+id/company_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/company"
+                android:textColor="#616161"
+                android:textSize="16sp" />
+
+            <!-- Location -->
+            <TextView
+                android:id="@+id/job_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/remote"
+                android:textColor="#546E7A"
+                android:textSize="14sp" />
+
+            <!-- Job Type (Full-Time, Part-Time, etc.) -->
+
+            <!-- Posted Time (Formatted as 'Posted X days ago') -->
+            <TextView
+                android:id="@+id/job_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="-20dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/full_time"
+                android:textColor="#2E7D32"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/job_posted_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/posted_2_days_ago"
+                android:textColor="#616161"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/applyButton"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="210dp"
+                android:layout_marginTop="-75dp"
+                android:backgroundTint="@color/white"
+                android:clickable="true"
+                android:elevation="0dp"
+                android:focusable="true"
+                android:padding="8dp"
+                android:text="@string/apply_to_job"
+                android:textColor="#D32F2F" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

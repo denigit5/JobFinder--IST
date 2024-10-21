@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "151132728505",
+    "project_id": "campservices-dfd0e",
+    "storage_bucket": "campservices-dfd0e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:151132728505:android:29e920c2d6898201c97f68",
+        "android_client_info": {
+          "package_name": "com.example.job_finder_ist"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD89e8npJ0raPbxHtPKeRrTZM5535y0ENo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

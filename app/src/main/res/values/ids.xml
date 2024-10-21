@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="btn_suggest_password" type="id" />
+    <item name="jobTitle" type="id" />
+    <item name="jobDescription" type="id" />
+    <item name="applyButton" type="id" />
+    <item name="jobRecyclerView" type="id" />
+    <item name="nav_bar" type="id" />
+</resources>

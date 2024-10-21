@@ -1,0 +1,156 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Background Image -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/backrun3"
+        android:contentDescription="@string/school_logo_desc"/>
+
+    <!-- Semi-transparent overlay -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99000000"
+        android:clickable="false" />
+
+    <!-- Original RelativeLayout with content -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <!-- Footer Icons (All Jobs and Applied Jobs) -->
+        <ImageView
+            android:id="@+id/school_logo_landing"
+            android:layout_width="235dp"
+            android:layout_height="203dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:contentDescription="@string/school_logo_desc"
+            android:src="@drawable/ist_logo" />
+
+        <TextView
+            android:id="@+id/welcome_message"
+            android:layout_width="wrap_content"
+            android:layout_height="359dp"
+            android:layout_below="@id/school_logo_landing"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="2dp"
+            android:background="#50FFFFFF"
+            android:elegantTextHeight="true"
+            android:paddingLeft="3dp"
+            android:paddingTop="30dp"
+            android:paddingRight="3dp"
+            android:text="@string/welcome_message"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:lineHeight="35dp"
+            tools:layout_margin="10dp" />
+
+        <TextView
+            android:id="@+id/create_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/school_logo_landing"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="210dp"
+            android:background="#CD4848"
+            android:elegantTextHeight="true"
+            android:padding="5dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="@string/create_account"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            tools:ignore="RtlSymmetry,TextContrastCheck" />
+
+        <Button
+            android:id="@+id/btn_signup"
+            android:layout_width="146dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/create_account"
+            android:layout_alignTop="@id/welcome_message"
+            android:layout_marginStart="?attr/listPreferredItemPaddingStart"
+            android:layout_marginTop="259dp"
+            android:backgroundTint="@color/white"
+            android:text="@string/signup"
+            android:textColor="#E61C1C"
+            android:textSize="16sp"
+            tools:background="@drawable/rounded_button"
+            tools:ignore="TextContrastCheck" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="146dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/welcome_message"
+            android:layout_alignEnd="@id/btn_signup"
+            android:layout_marginTop="-101dp"
+            android:layout_marginEnd="-180dp"
+            android:backgroundTint="@color/white"
+            android:text="@string/login"
+            android:textColor="#E61C1C"
+            tools:background="@drawable/rounded_button"
+            tools:ignore="TextContrastCheck" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:backgroundTint="#90F60404"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            tools:background="@color/dime_red">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="2dp"
+                android:clickable="true"
+                android:contentDescription="@string/todo"
+                android:focusable="true"
+                android:src="@drawable/jobimg1"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="30dp"
+
+                android:gravity="center"
+                android:text="@string/all_jobs"
+                android:textColor="@color/white" />
+
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginLeft="20dp"
+                android:contentDescription="@string/tododo"
+                android:src="@drawable/jobimg2"
+                tools:ignore="RtlHardcoded" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:gravity="center"
+                android:text="@string/applied_jobs"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</FrameLayout>
