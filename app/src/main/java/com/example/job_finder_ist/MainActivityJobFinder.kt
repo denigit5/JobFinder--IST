@@ -32,6 +32,8 @@ class MainActivityJobFinder : AppCompatActivity() {
     private lateinit var jobsAdapter: JobsAdapter // Adapter for RecyclerView
     private val db = FirebaseFirestore.getInstance() // Firestore instance
 
+    private val REQUEST_NOTIFICATION_PERMISSION = 1 // Constant for notification permission request
+
     // Activity Result API for image picking
     private val pickImageLauncher = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
         uri?.let {
@@ -154,6 +156,29 @@ class MainActivityJobFinder : AppCompatActivity() {
         recyclerView.addItemDecoration(SpaceItemDecoration(spacingInPixels))
     }
 
+    // Request notification permission for Android 13 (API level 33) and above
+    private fun checkNotificationPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.POST_NOTIFICATIONS), REQUEST_NOTIFICATION_PERMISSION)
+            }
+        }
+    }
+
+    // Handle permission request results
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == REQUEST_NOTIFICATION_PERMISSION) {
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission granted, proceed with notifications
+                Toast.makeText(this, "Notification permission granted", Toast.LENGTH_SHORT).show()
+            } else {
+                // Permission denied
+                Toast.makeText(this, "Notification permission denied", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
     // Function to fetch job data from Firestore and update the RecyclerView
     @SuppressLint("NotifyDataSetChanged")
     private fun fetchJobsFromFirestore() {
@@ -228,57 +253,46 @@ class MainActivityJobFinder : AppCompatActivity() {
     // Function to fetch the profile picture URL from Firestore
     private fun fetchProfilePictureUrl() {
         val userId = FirebaseAuth.getInstance().currentUser?.uid
-        val userDocRef = db.collection("users").document(userId ?: return)
 
-        userDocRef.get().addOnSuccessListener { document ->
-            if (document != null && document.contains("profilePictureUrl")) {
-                val profilePictureUrl = document.getString("profilePictureUrl")
-                // Load the profile picture using Glide
-                val profilePicture = findViewById<ImageView>(R.id.profile_picture)
-                Glide.with(this)
-                    .load(profilePictureUrl)
-                    .placeholder(R.drawable.profile_holder)
-                    .circleCrop()
-                    .into(profilePicture)
-            }
-        }.addOnFailureListener { exception ->
-            Log.e("MainActivityJobFinder", "Error fetching profile picture URL", exception)
-        }
-    }
+        if (userId != null) {
+            val docRef = db.collection("alumni").document(userId)
+            docRef.get()
+                .addOnSuccessListener { document ->
+                    if (document.exists()) {
+                        val profilePictureUrl = document.getString("profilePictureUrl")
+                        val profilePicture = findViewById<ImageView>(R.id.profile_picture)
 
-
-    // Function to subscribe to job notifications
-    private fun subscribeToJobNotifications() {
-        FirebaseMessaging.getInstance().subscribeToTopic("jobs")
-            .addOnCompleteListener { task ->
-                var msg = "Subscribed to job notifications"
-                if (!task.isSuccessful) {
-                    msg = "Failed to subscribe to job notifications"
+                        profilePictureUrl?.let {
+                            // Load profile picture using Glide
+                            Glide.with(this).load(it).into(profilePicture)
+                        }
+                    }
                 }
-                Log.d("MainActivityJobFinder", msg)
-                Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
-            }
-    }
-
-    // Function to check notification permission
-    private fun checkNotificationPermission() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.POST_NOTIFICATIONS), 1)
-            }
+                .addOnFailureListener { e ->
+                    Log.e("MainActivityJobFinder", "Error fetching profile picture URL", e)
+                }
         }
     }
 
-    // Function to check if there are new job postings
-    private fun isNewJobPosted(): Boolean {
-        // Implement logic to determine if new jobs are posted
-        return false // Return false or true based on your logic
-    }
-
-    // Function to log out the user
+    // Logout function to handle user sign out
     private fun logoutUser() {
         FirebaseAuth.getInstance().signOut()
-        Toast.makeText(this, "Logged out successfully", Toast.LENGTH_SHORT).show()
-        finish() // Close the activity
+        finish()
+    }
+
+    // Function to determine if a new job has been posted
+    private fun isNewJobPosted(): Boolean {
+        // Check for new job postings logic
+        return true // Placeholder for now, can be linked with actual job posting data
+    }
+
+    // Subscribe to Firebase Cloud Messaging (FCM) for job notifications
+    private fun subscribeToJobNotifications() {
+        FirebaseMessaging.getInstance().subscribeToTopic("new_job_notifications")
+            .addOnCompleteListener { task ->
+                val msg = if (task.isSuccessful) "Subscribed to job notifications" else "Failed to subscribe to job notifications"
+                Log.d("MainActivityJobFinder", msg)
+                Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+            }
     }
 }

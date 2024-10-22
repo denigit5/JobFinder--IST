@@ -18,6 +18,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     private static final String TAG = "MyFirebaseMsgService";
     private static final String CHANNEL_ID = "job_notifications";
+    private static final int REQUEST_NOTIFICATION_PERMISSION = 1;
 
     @Override
     public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
@@ -57,7 +58,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         // Build and show the notification
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, CHANNEL_ID)
-                .setSmallIcon(R.drawable.ic_notification)
+                .setSmallIcon(R.drawable.red_dot)
                 .setContentTitle(title)
                 .setContentText(messageBody)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)

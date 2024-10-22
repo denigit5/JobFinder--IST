@@ -64,7 +64,6 @@ dependencies {
     implementation(libs.androidx.viewpager2)
     implementation (libs.androidx.material.icons.extended)
     implementation (libs.compose)
-    implementation(libs.androidx.media3.common)
     implementation(libs.androidx.material.vversion)
 
     // Firebase SDKs
